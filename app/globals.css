@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'GowunBatang-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MadeKenfolg';
+  src: url('/fonts/made-kenfolg-v2-personal-use.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 기본 폰트 설정 */
+body {
+  color: #374151;
+  background-color: #ffffff;
+  font-family: 'GowunBatang-Regular', serif;
+}
+
+/* 한글 텍스트를 위한 기본 클래스 */
+.korean-text {
+  font-family: 'GowunBatang-Regular', serif;
+}
+
+/* 영문 텍스트를 위한 클래스들 */
+.bodoni-font {
+  font-family: 'MadeKenfolg', serif;
+  font-style: normal;
+}
+
+.font-serif {
+  font-family: 'MadeKenfolg', serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes drawPath {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes float-with-pause {
+  0% { 
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  10% { 
+    opacity: 0.6;
+  }
+  45% { 
+    transform: translateY(40vh);
+  }
+  55% { 
+    transform: translateY(40vh);
+  }
+  100% { 
+    transform: translateY(-20vh);
+    opacity: 0;
+  }
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+/* 모바일에서의 pull-to-refresh 방지 */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  overflow-y: auto;
+  height: 100vh;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+/* 스크롤 컨테이너에 대한 스타일 수정 */
+.scroll-container {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@keyframes scrollDown {
+    0% {
+        transform: translateY(0) translateX(-50%);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(12px) translateX(-50%);
+        opacity: 0;
+    }
+    76% {
+        transform: translateY(0) translateX(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) translateX(-50%);
+        opacity: 1;
+    }
+}
+
+.animate-scrollDown {
+    animation: scrollDown 1.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
