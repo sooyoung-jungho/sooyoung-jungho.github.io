@@ -26,7 +26,7 @@ export default function Map() {
             const map = new window.naver.maps.Map('map', mapOptions);
 
             const contentString = [
-                '<div class="iw_inner" style="padding:16px 8px; margin: 0; width: 150px; text-align: center; min-height: 80px; display: flex; flex-direction: column; justify-content: center;">',
+                '<div class="iw_inner" style="padding:16px 8px; margin: 0; width: 150px; height: 100%; text-align: center; min-height: 80px; display: flex; flex-direction: column; justify-content: center; align-items: center;">',
                 '   <p style="font-size: 1rem; margin: 0 0 4px 0; font-weight: 500;">노블발렌티 대치</p>',
                 '   <p style="font-size: 0.7rem; margin: 0;">서울 강남구 영동대로 325</p>',
                 '</div>'
@@ -57,7 +57,7 @@ export default function Map() {
                 borderRadius: 8,
                 disableAnchor: true,
                 textAlign: "center",
-                pixelOffset: new window.naver.maps.Point(0, -5)
+                pixelOffset: new window.naver.maps.Point(0, -10)
             });
 
             window.naver.maps.Event.addListener(marker, "click", function () {

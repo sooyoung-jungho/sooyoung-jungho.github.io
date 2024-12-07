@@ -331,13 +331,13 @@ export default function Home() {
               <div className="flex gap-4">
                 <button
                   onClick={() => setIsGroomAccountModalOpen(true)}
-                  className="px-4 py-2 bg-green-800 text-white text-sm rounded-full shadow-lg hover:bg-green-700 transition-colors korean-text"
+                  className="px-4 py-2 bg-[#4A6B55] text-white text-sm rounded-full shadow-lg korean-text"
                 >
                   신랑측 계좌번호
                 </button>
                 <button
                   onClick={() => setIsBrideAccountModalOpen(true)}
-                  className="px-4 py-2 bg-green-800 text-white text-sm rounded-full shadow-lg hover:bg-green-700 transition-colors korean-text"
+                  className="px-4 py-2 bg-[#C17F7F] text-white text-sm rounded-full shadow-lg korean-text"
                 >
                   신부측 계좌번호
                 </button>
