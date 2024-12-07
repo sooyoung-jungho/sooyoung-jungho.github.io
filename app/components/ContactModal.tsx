@@ -71,8 +71,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                         {groomContacts.map((contact, index) => (
                                             <div key={index} className="flex items-center justify-between">
                                                 <div className="text-white">
-                                                    <div className="text-base">{contact.role}</div>
-                                                    <div className="text-lg font-medium mt-0.5">{contact.name}</div>
+                                                    <div className="text-lg font-medium">{contact.role}</div>
+                                                    <div className="text-xl font-semibold mt-0.5">{contact.name}</div>
                                                 </div>
                                                 <div className="flex gap-2">
                                                     <button
@@ -103,8 +103,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                         {brideContacts.map((contact, index) => (
                                             <div key={index} className="flex items-center justify-between">
                                                 <div className="text-white">
-                                                    <div className="text-base">{contact.role}</div>
-                                                    <div className="text-lg font-medium mt-0.5">{contact.name}</div>
+                                                    <div className="text-lg font-medium">{contact.role}</div>
+                                                    <div className="text-xl font-semibold mt-0.5">{contact.name}</div>
                                                 </div>
                                                 <div className="flex gap-2">
                                                     <button

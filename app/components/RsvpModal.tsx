@@ -78,7 +78,7 @@ export default function RsvpModal({ isOpen, onClose, onSubmitSuccess }: RsvpModa
                     <div className="flex mb-6">
                         <button
                             type="button"
-                            className={`flex-1 py-2 border-b ${activeTab === '신랑' ? 'bg-[#B4A89F] text-white' : ''}`}
+                            className={`flex-1 py-2 text-base font-medium border-b ${activeTab === '신랑' ? 'bg-[#B4A89F] text-white' : ''}`}
                             onClick={() => setActiveTab('신랑')}
                         >
                             신랑측 하객
@@ -106,7 +106,7 @@ export default function RsvpModal({ isOpen, onClose, onSubmitSuccess }: RsvpModa
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">참석 여부</label>
+                            <label className="block text-base font-semibold text-gray-700">참석 여부</label>
                             <div className="flex gap-2 mt-1">
                                 {[
                                     { value: '참석', label: '참석하겠습니다' },
@@ -116,10 +116,7 @@ export default function RsvpModal({ isOpen, onClose, onSubmitSuccess }: RsvpModa
                                     <button
                                         key={option.value}
                                         type="button"
-                                        className={`flex-1 py-1.5 rounded text-xs ${attendance === option.value
-                                            ? 'bg-[#B4A89F] text-white'
-                                            : 'border hover:bg-gray-50'
-                                            }`}
+                                        className={`flex-1 py-2 text-sm font-medium rounded ${attendance === option.value ? 'bg-[#B4A89F] text-white' : 'border hover:bg-gray-50'}`}
                                         onClick={() => setAttendance(option.value as typeof attendance)}
                                     >
                                         {option.label}

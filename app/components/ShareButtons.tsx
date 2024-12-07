@@ -94,7 +94,7 @@ export default function ShareButtons() {
             <div className="flex justify-center gap-4">
                 <button
                     onClick={sendKakaoLink}
-                    className="flex items-center justify-center gap-1 py-1.5 px-2.5 transition-colors korean-text text-[11px]"
+                    className="flex items-center justify-center gap-1 py-1.5 px-2.5 transition-colors korean-text text-xs font-medium"
                 >
                     <Image
                         src="/kakaotalk.svg"
@@ -104,12 +104,12 @@ export default function ShareButtons() {
                         className="text-gray-600"
                         style={{ filter: 'invert(42%) sepia(9%) saturate(12%) hue-rotate(316deg) brightness(95%) contrast(87%)' }}
                     />
-                    <span className="text-gray-600">카카오톡 공유하기</span>
+                    <span className="text-gray-600">카카오톡으로 공유하기</span>
                 </button>
 
                 <button
                     onClick={copyLink}
-                    className="flex items-center justify-center gap-1 py-1.5 px-2.5 transition-colors korean-text text-[11px]"
+                    className="flex items-center justify-center gap-1 py-1.5 px-2.5 transition-colors korean-text text-xs font-medium"
                 >
                     <svg
                         className="w-3.5 h-3.5 text-gray-600"

@@ -6,15 +6,16 @@ import paperBgAvif from '@/assets/gallery/paper.avif';
 import paperBgWebp from '@/assets/gallery/paper.webp';
 import sooyoungPhotoAvif from '@/assets/gallery/sooyoung5.avif';
 import sooyoungPhotoWebp from '@/assets/gallery/sooyoung5.webp';
+import { Dialog } from '@headlessui/react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import AccountInfo from './components/AccountInfo';
+import { toast } from 'react-hot-toast';
 import ContactModal from './components/ContactModal';
 import Gallery from './components/Gallery';
 import Guestbook from './components/Guestbook';
 import LocationInfo from './components/LocationInfo';
-import Map from './components/Map';
 import ScrollIndicator from './components/ScrollIndicator';
 import ShareButtons from './components/ShareButtons';
 
@@ -68,7 +69,7 @@ export default function Home() {
     };
 
     // 약간의 지연 후 시작
-    setTimeout(showSectionsSequentially, 100);
+    setTimeout(showSectionsSequentially, 200);
   }, []);
 
   useEffect(() => {
@@ -91,6 +92,19 @@ export default function Home() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const [isGroomAccountModalOpen, setIsGroomAccountModalOpen] = useState(false);
+  const [isBrideAccountModalOpen, setIsBrideAccountModalOpen] = useState(false);
+
+  const handleCopy = async (accountNumber: string) => {
+    try {
+      await navigator.clipboard.writeText(accountNumber);
+      toast.success('계좌번호가 복사되었습니다');
+    } catch (err) {
+      console.error('Failed to copy:', err);
+      toast.error('계좌번호 복사에 실패했습니다');
+    }
+  };
 
   if (!mounted) {
     return (
@@ -152,9 +166,11 @@ export default function Home() {
                       alt="Sooyoung Photo"
                       className="object-cover rounded-lg shadow-lg"
                       fill
-                      sizes="(max-width: 768px) 30vw, (max-width: 1024px) 144px, 192px"
-                      quality={30}
-                      priority
+                      sizes="(max-width: 768px) 120px, 144px"
+                      quality={20}
+                      loading="eager"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j..."
                     />
                   </picture>
                 </div>
@@ -167,7 +183,7 @@ export default function Home() {
                       className="object-cover rounded-lg shadow-lg"
                       fill
                       sizes="(max-width: 768px) 30vw, (max-width: 1024px) 144px, 192px"
-                      quality={30}
+                      quality={20}
                       priority
                     />
                   </picture>
@@ -235,7 +251,7 @@ export default function Home() {
               </div>
 
               {/* 메인 텍스트 */}
-              <div className="space-y-2 text-center text-gray-600 mt-16 korean-text">
+              <div className="text-gray-600 mb-8 italic text-balance space-y-4 text-center">
                 <p>같이 있을 때</p>
                 <p>가장 나다운 모습이 되게 하는</p>
                 <p>사람을 만났습니다.</p>
@@ -285,7 +301,6 @@ export default function Home() {
             className={`relative z-10 w-full flex flex-col items-center justify-center min-h-screen px-4 pt-16 fade-in-section ${visibleSections.section3 ? 'is-visible' : ''
               }`}
           >
-            <Map />
             <LocationInfo />
           </section>
 
@@ -303,13 +318,28 @@ export default function Home() {
               <h2 className="text-xl font-medium text-center mb-8 text-gray-800">
                 마음 전해주실 곳
               </h2>
-              <div className="text-gray-600 mb-8 italic text-balance space-y-4">
-                <p>&ldquo;필요하신 분들을 위해</p>
+              <div className="text-gray-600 mb-8 italic text-balance space-y-4 text-center">
+                <p>필요하신 분들을 위해</p>
                 <p>안내드리니 양해 부탁드립니다.</p>
                 <p>참석하지 못하시더라도 축하해주시는</p>
-                <p>그 마음 감사히 간직하겠습니다.&rdquo;</p>
+                <p>그 마음 감사히 간직하겠습니다.</p>
               </div>
-              <AccountInfo />
+
+              {/* 계좌번호 버튼들을 여기로 이동 */}
+              <div className="flex gap-4">
+                <button
+                  onClick={() => setIsGroomAccountModalOpen(true)}
+                  className="px-4 py-2 bg-green-800 text-white text-sm rounded-full shadow-lg hover:bg-green-700 transition-colors korean-text"
+                >
+                  신랑측 계좌번호
+                </button>
+                <button
+                  onClick={() => setIsBrideAccountModalOpen(true)}
+                  className="px-4 py-2 bg-green-800 text-white text-sm rounded-full shadow-lg hover:bg-green-700 transition-colors korean-text"
+                >
+                  신부측 계좌번호
+                </button>
+              </div>
             </section>
           )}
 
@@ -341,9 +371,9 @@ export default function Home() {
                   </div>
                 </div>
                 <h2 className="text-2xl text-gray-800">참석여부</h2>
-                <div className="space-y-4 text-gray-600 text-sm">
+                <div className="text-gray-600 mb-8 italic text-balance space-y-4 text-center">
                   <p>부족함 없이 식사를 제공할 수 있기 위함이니</p>
-                  <p>참석에 부담 가지지 말아주시고,</p>
+                  <p>참석에 부담 가지지 마시고,</p>
                   <p>편하게 알려주시면 감사합니다.</p>
                 </div>
                 <div className="border-t border-gray-200 w-1/2 mx-auto my-8" />
@@ -412,6 +442,151 @@ export default function Home() {
       {/* Modals */}
       <RsvpModal isOpen={isRsvpOpen} onClose={() => setIsRsvpOpen(false)} onSubmitSuccess={(entry) => setNewGuestbookEntry(entry)} />
       <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
+
+      {/* 신랑측 계좌 모달 */}
+      <Dialog
+        open={isGroomAccountModalOpen}
+        onClose={() => setIsGroomAccountModalOpen(false)}
+        className="relative z-50"
+      >
+        <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+        <div className="fixed inset-0 flex items-center justify-center p-4">
+          <Dialog.Panel className="w-full max-w-md rounded-lg bg-white p-6 shadow-xl">
+            <div className="flex justify-between items-center mb-4">
+              <Dialog.Title className="text-xl font-medium text-gray-800">
+                신랑측 계좌번호
+              </Dialog.Title>
+              <button
+                onClick={() => setIsGroomAccountModalOpen(false)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <XMarkIcon className="h-6 w-6" />
+              </button>
+            </div>
+            <div className="space-y-4">
+              {/* 신랑 계좌 */}
+              <div className="p-4 bg-white rounded-lg shadow-sm space-y-3">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">신랑 계좌</h3>
+                <div className="grid grid-cols-[1fr_100px] gap-2 items-center">
+                  <div>
+                    <p className="text-base text-gray-500 font-medium">신한 (예금주: 현정호)</p>
+                    <p className="text-base text-gray-600 font-medium">110-354-833731</p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <button
+                      onClick={() => handleCopy('110354833731')}
+                      className="w-auto px-4 h-8 text-base text-gray-600 font-medium bg-gray-100 rounded-full hover:bg-gray-200"
+                    >
+                      복사하기
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* 신랑 아버지 계좌 */}
+              <div className="p-4 bg-white rounded-lg shadow-sm space-y-3">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">신랑 아버지 계좌</h3>
+                <div className="grid grid-cols-[1fr_100px] gap-2 items-center">
+                  <div>
+                    <p className="text-base text-gray-500 font-medium">하나 (예금주: 현종권)</p>
+                    <p className="text-base text-gray-600 font-medium">800-910041-89907</p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <button
+                      onClick={() => handleCopy('80091004189907')}
+                      className="w-auto px-4 h-8 text-base text-gray-600 font-medium bg-gray-100 rounded-full hover:bg-gray-200"
+                    >
+                      복사하기
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* 신랑 어머니 계좌 */}
+              <div className="p-4 bg-white rounded-lg shadow-sm space-y-3">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">신랑 어머니 계좌</h3>
+                <div className="grid grid-cols-[1fr_100px] gap-2 items-center">
+                  <div>
+                    <p className="text-base text-gray-500 font-medium">신한 (예금주: 안미향)</p>
+                    <p className="text-base text-gray-600 font-medium">110-513-232621</p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <button
+                      onClick={() => handleCopy('110513232621')}
+                      className="w-auto px-4 h-8 text-base text-gray-600 font-medium bg-gray-100 rounded-full hover:bg-gray-200"
+                    >
+                      복사하기
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Dialog.Panel>
+        </div>
+      </Dialog>
+
+      {/* 신부측 계좌 모달 */}
+      <Dialog
+        open={isBrideAccountModalOpen}
+        onClose={() => setIsBrideAccountModalOpen(false)}
+        className="relative z-50"
+      >
+        <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+        <div className="fixed inset-0 flex items-center justify-center p-4">
+          <Dialog.Panel className="w-full max-w-md rounded-lg bg-white p-6 shadow-xl">
+            <div className="flex justify-between items-center mb-4">
+              <Dialog.Title className="text-xl font-medium text-gray-800">
+                신부측 계좌번호
+              </Dialog.Title>
+              <button
+                onClick={() => setIsBrideAccountModalOpen(false)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <XMarkIcon className="h-6 w-6" />
+              </button>
+            </div>
+            <div className="space-y-4">
+              {/* 신부 계좌 */}
+              <div className="p-4 bg-white rounded-lg shadow-sm space-y-3">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">신부 계좌</h3>
+                <div className="grid grid-cols-[1fr_100px] gap-2 items-center">
+                  <div>
+                    <p className="text-base text-gray-500 font-medium">토스 (예금주: 문수영)</p>
+                    <p className="text-base text-gray-600 font-medium">1000-4828-5857</p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <button
+                      onClick={() => handleCopy('100048285857')}
+                      className="w-auto px-4 h-8 text-base text-gray-600 font-medium bg-gray-100 rounded-full hover:bg-gray-200"
+                    >
+                      복사하기
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* 신부 아버지 계좌 */}
+              <div className="p-4 bg-white rounded-lg shadow-sm space-y-3">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">혼주 계좌</h3>
+                <div className="grid grid-cols-[1fr_100px] gap-2 items-center">
+                  <div>
+                    <p className="text-base text-gray-500 font-medium">우리 (예금주: 문영환)</p>
+                    <p className="text-base text-gray-600 font-medium">1002-062-456376</p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <button
+                      onClick={() => handleCopy('1002062456376')}
+                      className="w-auto px-4 h-8 text-base text-gray-600 font-medium bg-gray-100 rounded-full hover:bg-gray-200"
+                    >
+                      복사하기
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Dialog.Panel>
+        </div>
+      </Dialog>
     </>
   );
 }

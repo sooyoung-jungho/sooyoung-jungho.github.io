@@ -63,8 +63,8 @@ export default function Guestbook({ newEntry }: GuestbookProps) {
             </div>
 
             <div className="text-gray-600 mb-8 italic text-balance space-y-4 text-center">
-                <p>&ldquo;소중한 축하의 마음을</p>
-                <p>남겨주셔서 감사합니다.&rdquo;</p>
+                <p>소중한 축하의 마음을</p>
+                <p>남겨주셔서 감사합니다.</p>
             </div>
 
             <div className="space-y-6">

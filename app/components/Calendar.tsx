@@ -51,8 +51,8 @@ export default function Calendar({ weddingDate }: CalendarProps) {
       <div className="bg-slate-700 rounded-2xl p-8 text-white">
         {/* 월 표시 */}
         <div className="text-center mb-6">
-          <h2 className="text-3xl font-light mb-8">{month + 1}월</h2>
-          <div className="grid grid-cols-7 text-sm mb-4">
+          <h2 className="text-4xl font-medium mb-8">{month + 1}월</h2>
+          <div className="grid grid-cols-7 text-base font-medium mb-4">
             <div className="text-red-300">일</div>
             <div>월</div>
             <div>화</div>
@@ -85,8 +85,8 @@ export default function Calendar({ weddingDate }: CalendarProps) {
 
         {/* D-Day */}
         <div className="mt-8 text-center border-t border-slate-600 pt-8">
-          <div className="text-amber-500 text-lg mb-2">D-DAY</div>
-          <div className="text-3xl font-light">{daysUntilWedding}</div>
+          <div className="text-amber-500 text-xl font-medium mb-2">D-DAY</div>
+          <div className="text-4xl font-medium">{daysUntilWedding}</div>
         </div>
       </div>
     </div>
