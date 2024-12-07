@@ -3,10 +3,10 @@ import Map from './Map';
 
 export default function LocationInfo() {
     return (
-        <div className="w-full max-w-md mx-auto px-4 korean-text">
+        <div className="w-full max-w-md mx-auto px-4 korean-text-bold">
             {/* 교통안내 섹션 */}
             <div className="text-base text-gray-600 space-y-6">
-                <h2 className="text-2xl font-semibold text-center mt-6 text-green-800 p-2 rounded">교통안내</h2>
+                <h2 className="text-xl font-medium text-center mb-8 text-gray-800">교통안내</h2>
 
                 <Map />
 
