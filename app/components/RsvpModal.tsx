@@ -107,20 +107,39 @@ export default function RsvpModal({ isOpen, onClose, onSubmitSuccess }: RsvpModa
 
                         <div>
                             <label className="block text-base font-semibold text-gray-700">참석 여부</label>
-                            <div className="flex gap-2 mt-1">
+                            <div className="flex flex-col gap-2 mt-1">
                                 {[
-                                    { value: '참석', label: '참석하겠습니다' },
+                                    { value: '참석', label: '참석합니다' },
                                     { value: '미정', label: '미정입니다' },
                                     { value: '미참', label: '참석이 어렵습니다' }
                                 ].map((option) => (
-                                    <button
+                                    <label
                                         key={option.value}
-                                        type="button"
-                                        className={`flex-1 py-2 text-sm font-medium rounded ${attendance === option.value ? 'bg-[#B4A89F] text-white' : 'border hover:bg-gray-50'}`}
-                                        onClick={() => setAttendance(option.value as typeof attendance)}
+                                        className="flex items-center gap-2 cursor-pointer"
                                     >
-                                        {option.label}
-                                    </button>
+                                        <input
+                                            type="radio"
+                                            name="attendance"
+                                            value={option.value}
+                                            checked={attendance === option.value}
+                                            onChange={() => setAttendance(option.value as typeof attendance)}
+                                            className="sr-only peer"
+                                        />
+                                        <div className="w-5 h-5 border rounded flex items-center justify-center peer-checked:bg-[#B4A89F] peer-checked:border-[#B4A89F]">
+                                            <svg
+                                                className="w-3 h-3 text-white hidden peer-checked:block"
+                                                viewBox="0 0 20 20"
+                                                fill="currentColor"
+                                            >
+                                                <path
+                                                    fillRule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clipRule="evenodd"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span className="text-sm">{option.label}</span>
+                                    </label>
                                 ))}
                             </div>
                         </div>
