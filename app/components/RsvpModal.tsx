@@ -78,23 +78,23 @@ export default function RsvpModal({ isOpen, onClose, onSubmitSuccess }: RsvpModa
                     <div className="flex mb-6">
                         <button
                             type="button"
-                            className={`flex-1 py-2 text-base font-medium border-b ${activeTab === '신랑' ? 'bg-[#B4A89F] text-white' : ''}`}
+                            className={`flex-1 py-2 text-base korean-text-bold border-b ${activeTab === '신랑' ? 'bg-[#B4A89F] text-white' : ''}`}
                             onClick={() => setActiveTab('신랑')}
                         >
                             신랑측 하객
                         </button>
                         <button
                             type="button"
-                            className={`flex-1 py-2 border-b ${activeTab === '신부' ? 'bg-[#B4A89F] text-white' : ''}`}
+                            className={`flex-1 py-2 korean-text-bold border-b ${activeTab === '신부' ? 'bg-[#B4A89F] text-white' : ''}`}
                             onClick={() => setActiveTab('신부')}
                         >
                             신부측 하객
                         </button>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-4 korean-text-bold">
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">성함</label>
+                            <label className="block text-sm text-gray-700">성함</label>
                             <input
                                 type="text"
                                 value={name}
@@ -106,7 +106,7 @@ export default function RsvpModal({ isOpen, onClose, onSubmitSuccess }: RsvpModa
                         </div>
 
                         <div>
-                            <label className="block text-base font-semibold text-gray-700">참석 여부</label>
+                            <label className="block text-base text-gray-700">참석 여부</label>
                             <div className="flex flex-col gap-2 mt-1">
                                 {[
                                     { value: '참석', label: '참석합니다' },
@@ -146,7 +146,7 @@ export default function RsvpModal({ isOpen, onClose, onSubmitSuccess }: RsvpModa
 
                         {attendance === '참석' && (
                             <div>
-                                <label className="block text-sm font-medium text-gray-700">참석 인원</label>
+                                <label className="block text-sm text-gray-700">참석 인원</label>
                                 <input
                                     type="number"
                                     min="1"
@@ -167,7 +167,7 @@ export default function RsvpModal({ isOpen, onClose, onSubmitSuccess }: RsvpModa
                         )}
 
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">축하 메시지</label>
+                            <label className="block text-sm text-gray-700">축하 메시지</label>
                             <textarea
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
@@ -181,14 +181,14 @@ export default function RsvpModal({ isOpen, onClose, onSubmitSuccess }: RsvpModa
                             <button
                                 type="button"
                                 onClick={onClose}
-                                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200"
+                                className="px-4 py-2 text-sm text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200"
                             >
                                 닫기
                             </button>
                             <button
                                 type="submit"
                                 disabled={!name.trim()}
-                                className={`px-4 py-2 text-sm font-medium rounded-md ${name.trim()
+                                className={`px-4 py-2 text-sm rounded-md ${name.trim()
                                     ? 'bg-[#B4A89F] text-white hover:bg-[#a39689]'
                                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                                     }`}

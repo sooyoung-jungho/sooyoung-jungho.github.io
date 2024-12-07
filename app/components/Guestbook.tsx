@@ -52,7 +52,7 @@ export default function Guestbook({ newEntry }: GuestbookProps) {
     }, [newEntry]);
 
     return (
-        <div className="w-full max-w-sm mx-auto korean-text relative px-4">
+        <div className="w-full max-w-sm mx-auto korean-text-bold relative px-4">
             <div className="text-center mb-8">
                 <div
                     className="inline-block border border-green-800 px-8 py-2 text-green-800 italic"

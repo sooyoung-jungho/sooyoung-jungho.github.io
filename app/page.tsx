@@ -198,10 +198,10 @@ export default function Home() {
               </h2>
 
               {/* 날짜와 장소 */}
-              <p className="text-sm sm:text-base lg:text-lg text-green-800 mb-2 font-serif italic">
+              <p className="text-sm sm:text-base lg:text-lg text-green-800 korean-text-bold italic">
                 2025 02 16 SUN 2PM
               </p>
-              <p className="text-sm sm:text-base lg:text-lg text-green-800 korean-text italic">
+              <p className="text-sm sm:text-base lg:text-lg text-green-800 korean-text-bold italic">
                 노블발렌티 대치
               </p>
 
@@ -253,7 +253,7 @@ export default function Home() {
               </div>
 
               {/* 메인 텍스트 */}
-              <div className="text-gray-600 mb-8 italic text-balance space-y-4 text-center">
+              <div className="text-gray-600 mb-8 italic text-balance space-y-4 text-center korean-text-bold">
                 <p>같이 있을 때</p>
                 <p>가장 나다운 모습이 되게 하는</p>
                 <p>사람을 만났습니다.</p>
@@ -269,7 +269,7 @@ export default function Home() {
               </div>
 
               {/* 혼주 정보 */}
-              <div className="text-center space-y-2 text-gray-700 mt-16 korean-text">
+              <div className="text-center space-y-2 text-gray-700 mt-16 korean-text-bold">
                 <div className="flex justify-between max-w-[220px] mx-auto">
                   <span>현종권 · 안미향 의 아들</span>
                   <span className="w-[60px]">정호</span>
@@ -282,7 +282,7 @@ export default function Home() {
 
               <button
                 onClick={() => setIsContactModalOpen(true)}
-                className="mt-4 px-3 py-1.5 bg-green-800 text-white text-xs rounded-full shadow-lg hover:bg-green-700 transition-colors korean-text"
+                className="mt-4 px-3 py-1.5 bg-green-800 text-white text-xs rounded-full shadow-lg hover:bg-green-700 transition-colors korean-text-bold"
               >
                 연락하기
               </button>
@@ -290,7 +290,7 @@ export default function Home() {
 
               {/* 날짜 및 장소 */}
               <div className="relative w-72 mx-auto">
-                <div className="border border-green-800 py-3 px-1 text-center text-gray-600 mt-14 backdrop-blur-sm relative korean-text shadow-lg bg-white/80">
+                <div className="border border-green-800 py-3 px-1 text-center text-gray-600 mt-14 backdrop-blur-sm relative korean-text-bold shadow-lg bg-white/80">
                   <p className="text-base font-bold text-green-800">2025년 2월 16일 일요일 오후 2시</p>
                   <p className="text-base font-bold text-green-800">노블발렌티 대치</p>
                 </div>
@@ -314,7 +314,7 @@ export default function Home() {
           {/* 다섯 번째 섹션: 계좌번호 */}
           {SHOW_ACCOUNT_SECTION && (
             <section
-              className={`relative z-10 w-full flex flex-col items-center justify-center text-center min-h-[80vh] py-8 fade-in-section ${visibleSections.section7 ? 'is-visible' : ''
+              className={`korean-text-bold relative z-10 w-full flex flex-col items-center justify-center text-center min-h-[80vh] py-8 fade-in-section ${visibleSections.section7 ? 'is-visible' : ''
                 }`}
             >
               <h2 className="text-xl font-medium text-center mb-8 text-gray-800">
@@ -331,13 +331,13 @@ export default function Home() {
               <div className="flex gap-4">
                 <button
                   onClick={() => setIsGroomAccountModalOpen(true)}
-                  className="px-4 py-2 bg-[#4A6B55] text-white text-sm rounded-full shadow-lg korean-text"
+                  className="px-4 py-2 bg-[#4A6B55] text-white text-sm rounded-full shadow-lg korean-text-bold"
                 >
                   신랑측 계좌번호
                 </button>
                 <button
                   onClick={() => setIsBrideAccountModalOpen(true)}
-                  className="px-4 py-2 bg-[#C17F7F] text-white text-sm rounded-full shadow-lg korean-text"
+                  className="px-4 py-2 bg-[#C17F7F] text-white text-sm rounded-full shadow-lg korean-text-bold"
                 >
                   신부측 계좌번호
                 </button>
@@ -365,7 +365,7 @@ export default function Home() {
                 }`}
             >
               <div
-                className="w-full max-w-md px-4 sm:px-0 text-center space-y-6 korean-text"
+                className="w-full max-w-md px-4 sm:px-0 text-center space-y-6 korean-text-bold"
               >
                 <div className="text-center mb-6">
                   <div className="inline-block border border-green-800 px-8 py-2 text-green-800" style={{ borderRadius: '50%', fontFamily: 'MadeKenfolg' }}>
@@ -401,7 +401,7 @@ export default function Home() {
               {/* 방명록 작성 버튼 추가 */}
               <button
                 onClick={() => setIsRsvpOpen(true)}
-                className="mt-8 px-4 py-1.5 bg-green-800/10 text-green-800 text-xs rounded-full hover:bg-green-800/20 transition-colors korean-text"
+                className="mt-8 px-4 py-1.5 bg-green-800/10 text-green-800 text-xs rounded-full hover:bg-green-800/20 transition-colors korean-text-bold"
               >
                 방명록 작성하기
               </button>
@@ -423,7 +423,7 @@ export default function Home() {
 
       {/* Bottom Buttons */}
       {/* {SHOW_RSVP_SECTION && !hideButtonsForToday && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white/95 shadow-lg transition-all duration-300 ease-in-out z-50 korean-text">
+        <div className="fixed bottom-0 left-0 right-0 bg-white/95 shadow-lg transition-all duration-300 ease-in-out z-50 korean-text-bold">
           <div className="max-w-md mx-auto p-3 flex items-center justify-between">
             <button
               onClick={() => setIsRsvpOpen(true)}

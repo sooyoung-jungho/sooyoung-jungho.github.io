@@ -10,6 +10,13 @@
 }
 
 @font-face {
+  font-family: 'GowunBatang-Bold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'MadeKenfolg';
   src: url('/fonts/made-kenfolg-v2-personal-use.otf') format('opentype');
   font-weight: normal;
@@ -26,6 +33,11 @@ body {
 /* 한글 텍스트를 위한 기본 클래스 */
 .korean-text {
   font-family: 'GowunBatang-Regular', serif;
+}
+
+/* 한글 굵은 텍스트를 위한 클래스 */
+.korean-text-bold {
+  font-family: 'GowunBatang-Bold', serif;
 }
 
 /* 영문 텍스트를 위한 클래스들 */
@@ -152,7 +164,7 @@ main {
 .fade-in-section {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   will-change: opacity, transform;
 }
 
