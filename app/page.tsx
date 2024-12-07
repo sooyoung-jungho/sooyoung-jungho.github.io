@@ -372,7 +372,6 @@ export default function Home() {
                     R.S.V.P
                   </div>
                 </div>
-                <h2 className="text-2xl text-gray-800">참석여부</h2>
                 <div className="text-gray-600 mb-8 italic text-balance space-y-4 text-center">
                   <p>부족함 없이 식사를 제공할 수 있기 위함이니</p>
                   <p>참석에 부담 가지지 마시고,</p>
@@ -380,7 +379,7 @@ export default function Home() {
                 </div>
                 <div className="border-t border-gray-200 w-1/2 mx-auto my-8" />
                 <button
-                  className="mt-8 bg-green-800 text-white px-8 py-3 rounded-full shadow-lg hover:bg-green-700 transition-colors"
+                  className="mt-8 bg-green-800 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-700 transition-colors"
                   onClick={() => setIsRsvpOpen(true)}
                 >
                   참석여부 전달하기
