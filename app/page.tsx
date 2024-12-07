@@ -569,7 +569,7 @@ export default function Home() {
 
               {/* 신부 아버지 계좌 */}
               <div className="p-4 bg-white rounded-lg shadow-sm space-y-3">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">혼주 계좌</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">신부 혼주 계좌</h3>
                 <div className="grid grid-cols-[1fr_100px] gap-2 items-center">
                   <div>
                     <p className="text-base text-gray-500 font-medium">우리 (예금주: 문영환)</p>
