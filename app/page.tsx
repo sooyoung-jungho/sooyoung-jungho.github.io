@@ -498,7 +498,7 @@ export default function Home() {
                       onClick={() => handleCopy('80091004189907')}
                       className="w-auto px-4 h-8 text-base text-gray-600 font-medium bg-gray-100 rounded-full hover:bg-gray-200"
                     >
-                      ���사하기
+                      복사하기
                     </button>
                   </div>
                 </div>
