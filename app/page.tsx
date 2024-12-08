@@ -253,14 +253,22 @@ export default function Home() {
               </div>
 
               {/* 메인 텍스트 */}
-              <div className="text-gray-600 mb-8 italic text-balance space-y-4 text-center korean-text-bold">
-                <p>같이 있을 때</p>
-                <p>가장 나다운 모습이 되게 하는</p>
-                <p>사람을 만났습니다.</p>
+              <div className="text-gray-600 mb-8 italic text-balance space-y-2 text-center text-lg font-medium">
+                <p>곁에 있을 때 가장 나다운 모습이</p>
+                <p>되게 하는 한 사람.</p>
                 <br />
-                <p>귀하신 발걸음이</p>
-                <p>저희의 행복한 출발을</p>
-                <p>더욱 빛나게 해주길 바랍니다.</p>
+                <p>서로의 부족한 부분을</p>
+                <p>채워줄 수 있는 한 사람.</p>
+                <br />
+                <p>그 사람과 삶의 여행을</p>
+                <p>함께 떠나려고 합니다.</p>
+                <br />
+                <p>저희 두 사람이</p>
+                <p>새로운 인생을 시작하는 첫날을</p>
+                <p>함께해 주셔서 감사드립니다.</p>
+                <br />
+                <p>앞으로 예쁘고 성실하게 살아가는 모습으로</p>
+                <p>여러분의 축하에 보답하겠습니다.</p>
               </div>
 
               {/* 구분선 */}

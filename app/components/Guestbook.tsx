@@ -52,7 +52,7 @@ export default function Guestbook({ newEntry }: GuestbookProps) {
     }, [newEntry]);
 
     return (
-        <div className="w-full max-w-sm mx-auto korean-text-bold relative px-4">
+        <div className="w-full max-w-sm mx-auto relative px-4">
             <div className="text-center mb-8">
                 <div
                     className="inline-block border border-green-800 px-8 py-2 text-green-800 italic"
@@ -62,7 +62,7 @@ export default function Guestbook({ newEntry }: GuestbookProps) {
                 </div>
             </div>
 
-            <div className="text-gray-600 mb-8 italic text-balance space-y-4 text-center">
+            <div className="korean-text-bold text-gray-600 mb-8 italic text-balance space-y-4 text-center">
                 <p>소중한 축하의 마음을</p>
                 <p>남겨주셔서 감사합니다.</p>
             </div>
@@ -74,8 +74,8 @@ export default function Guestbook({ newEntry }: GuestbookProps) {
                         className="bg-white/80 text-sm rounded-lg p-6 shadow-sm border border-green-800/10"
                     >
                         <div className="flex justify-between items-center mb-2">
-                            <span className="text-green-800">{entry.name}</span>
-                            <span className="text-xs text-gray-500">
+                            <span className="text-green-800 korean-text-bold">{entry.name}</span>
+                            <span className="text-xs text-gray-500 korean-text">
                                 {new Date(entry.submittedAt).toLocaleDateString()}
                             </span>
                         </div>
