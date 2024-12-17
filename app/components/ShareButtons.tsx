@@ -35,7 +35,7 @@ export default function ShareButtons() {
             window.Kakao.Share.sendDefault({
                 objectType: 'feed',
                 content: {
-                    title: '수영 ♥ 정호의 결혼식에 초대합니다',
+                    title: '정호 ♥ 수영의 결혼식에 초대합니다',
                     description: '2025년 2월 16일 일요일 오후 2시\n노블발렌티 대치',
                     imageUrl: 'https://sooyoung-jungho-wedding.netlify.app/gallery/thumbnail.webp',
                     link: {
