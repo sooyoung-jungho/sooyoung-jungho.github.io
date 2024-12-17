@@ -160,10 +160,10 @@ export default function Home() {
               <div className="flex flex-row justify-center gap-3 sm:gap-4 lg:gap-6 my-4 sm:my-6 lg:my-8">
                 <div className="w-[30vw] max-w-[144px] h-[40vw] max-h-[192px] relative">
                   <picture>
-                    <source srcSet={sooyoungPhotoAvif.src} type="image/avif" />
+                    <source srcSet={junghoPhotoAvif.src} type="image/avif" />
                     <Image
-                      src={sooyoungPhotoWebp}
-                      alt="Sooyoung Photo"
+                      src={junghoPhotoWebp}
+                      alt="Jungho Photo"
                       className="object-cover rounded-lg shadow-lg"
                       fill
                       sizes="(max-width: 768px) 120px, 144px"
@@ -176,10 +176,10 @@ export default function Home() {
                 </div>
                 <div className="w-[30vw] max-w-[144px] h-[40vw] max-h-[192px] relative">
                   <picture>
-                    <source srcSet={junghoPhotoAvif.src} type="image/avif" />
+                    <source srcSet={sooyoungPhotoAvif.src} type="image/avif" />
                     <Image
-                      src={junghoPhotoWebp}
-                      alt="Jungho Photo"
+                      src={sooyoungPhotoWebp}
+                      alt="Sooyoung Photo"
                       className="object-cover rounded-lg shadow-lg"
                       fill
                       sizes="(max-width: 768px) 30vw, (max-width: 1024px) 144px, 192px"
@@ -194,7 +194,7 @@ export default function Home() {
 
               {/* 이름 */}
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif italic text-green-800 mb-4 sm:mb-6 lg:mb-8 relative z-10">
-                Sooyoung & Jungho
+                Jungho & Sooyoung
               </h2>
 
               {/* 날짜와 장소 */}

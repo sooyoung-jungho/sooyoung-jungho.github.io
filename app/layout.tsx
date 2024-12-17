@@ -4,14 +4,14 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sooyoung-jungho-wedding.netlify.app'),
-  title: "수영 정호 결혼식에 초대합니다!",
+  title: "정호 수영 결혼식에 초대합니다!",
   description: "2025.02.16 일요일 오후 2시 노블발렌티 대치",
   icons: {
     icon: '/wedding-cake-thin.svg',
   },
   openGraph: {
     title: "🩷 Wedding Invitation 🩷",
-    description: "2025.02.16 수영 정호 결혼식에 초대합니다.",
+    description: "2025.02.16 정호 수영 결혼식에 초대합니다.",
     images: [
       {
         url: "/gallery/thumbnail.png",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "🩷 Wedding Invitation 🩷",
-    description: "2025.02.16 수영 정호 결혼식에 초대합니다.",
+    description: "2025.02.16 정호 수영 결혼식에 초대합니다.",
     images: ["/gallery/thumbnail.png"],
   }
 }
