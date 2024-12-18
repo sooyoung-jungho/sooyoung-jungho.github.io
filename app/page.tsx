@@ -2,6 +2,7 @@
 
 import junghoPhotoAvif from '@/assets/gallery/jungho2.avif';
 import junghoPhotoWebp from '@/assets/gallery/jungho2.webp';
+import junghoPhotoPng from '@/assets/gallery/j.png';
 import paperBgAvif from '@/assets/gallery/paper.avif';
 import paperBgWebp from '@/assets/gallery/paper.webp';
 import sooyoungPhotoAvif from '@/assets/gallery/sooyoung5.avif';
@@ -160,9 +161,9 @@ export default function Home() {
               <div className="flex flex-row justify-center gap-3 sm:gap-4 lg:gap-6 my-4 sm:my-6 lg:my-8">
                 <div className="w-[30vw] max-w-[144px] h-[40vw] max-h-[192px] relative">
                   <picture>
-                    <source srcSet={junghoPhotoAvif.src} type="image/avif" />
+                    <source srcSet={junghoPhotoPng.src} type="image/avif" />
                     <Image
-                      src={junghoPhotoWebp}
+                      src={junghoPhotoPng}
                       alt="Jungho Photo"
                       className="object-cover rounded-lg shadow-lg"
                       fill
