@@ -73,11 +73,8 @@ export default function Guestbook({ newEntry }: GuestbookProps) {
                         key={index}
                         className="bg-white/80 text-sm rounded-lg p-6 shadow-sm border border-green-800/10"
                     >
-                        <div className="flex justify-between items-center mb-2">
+                        <div className="mb-2">
                             <span className="text-green-800 korean-text-bold">{entry.name}</span>
-                            <span className="text-xs text-gray-500 korean-text">
-                                {new Date(entry.submittedAt).toLocaleDateString()}
-                            </span>
                         </div>
                         <p className="text-gray-600 whitespace-pre-wrap">{entry.message}</p>
                     </div>
